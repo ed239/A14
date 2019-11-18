@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>San Joaquin Valley Town Hall</title>
+	<link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<head>
+	<script>
+		function setCookie(cname,cvalue,exdays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays*24*60*60*1000));
+			var expires = "expires=" + d.toGMTString();
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+
+		function getCookie(cname) {
+			var name = cname + "=";
+			var decodedCookie = decodeURIComponent(document.cookie);
+			var ca = decodedCookie.split(';');
+			for(var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+
+		function checkCookie() {
+			var user=getCookie("username");
+			if (user != "") {
+				alert("Welcome again " + user);
+			} else {
+				user = prompt("Please enter your name:","");
+				if (user != "" && user != null) {
+					setCookie("username", user, 30);
+				}
+			}
+		}
+	</script>
+</head>
+
+<body onload="checkCookie()"></body>
+
+<body>s
+	<header>
+		<img src= " town_hall_logo.gif" alt="Logo" style="height:80px;" >
+		<h2>San Joaquin Valley Town Hall</h2>
+		<h3> Celebrating our 75th Year </h3>
+		
+	</header>
+
+	<main>
+		<h2>Our Mission</h2>
+		<br>
+		<p>San Joaquin Valley Town Hall is a non-profit organization that is run by an all-volunteer
+			board of directors. Our mission is to bring nationally and internationally renowned,
+			thought-provoking speakers who inform, educate, and entertain our audience! As one or our
+			members told us:
+		</p>
+		<br>
+		<p style="margin-left:10%;"> <q>Each year I give a ticket package to each of our family members. I think of it as the
+		gift of knowledge...and that is priceless.</q> </p>
+		<br>
+		<h2>Our Ticket Packages</h2>
+		<ul>
+			<li> Season Package: $95</li>
+			<li>Patron Package: $200</li>
+			<li>Single Speaker: $25</li>
+		</ul>
+
+		<h1> This season's guest speakers </h1>
+
+		<h4> October <br> <a href = "toobin75.jpg" >Jeffrey Toobin </a> </h4>
+		<img src="toobin75.jpg" height="75" width="75"/>
+
+		<h4>November <br> <a href = "sorkin75.jpg"> Andrew Ross Sorkin</a></h4>
+		<img src="sorkin75.jpg" height="75" width="75"/>
+
+		<h4>January <br> 	<a href="chua75.jpg"> Amy Chua</a></h4>
+		<img src="chua75.jpg" height="75" width="75"/></main>
+
+	<footer>
+		<p>&copy 2018, San Joaquin Valley Town Hall, Fresno, CA 93755</p>
+		<p>Eden Dubrovsky, 10.23.19</p>
+		
+	</footer>
+</body>
+</html>
